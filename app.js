@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const { PORT, DB_CONNECTION_STRING } = require('./utils/constants');
 const errorHandler = require('./middlewares/error-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const limiter = require('./middlewares/limiter');
 
 const app = express();
 
@@ -13,6 +14,7 @@ mongoose.connect(DB_CONNECTION_STRING, {
   useNewUrlParser: true,
 });
 
+app.use(limiter);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
