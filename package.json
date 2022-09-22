@@ -1,0 +1,20 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "diploma project backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-borz/movies-explorer-api.git"
+  },
+  "author": "Renat Kabanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x-borz/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/x-borz/movies-explorer-api#readme"
+}
