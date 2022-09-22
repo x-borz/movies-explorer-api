@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const auth = require('./middlewares/auth');
 const { PORT } = require('./utils/constants');
 const errorHandler = require('./middlewares/error-handler');
 
@@ -13,7 +12,6 @@ mongoose.connect('mongodb://localhost:27017/bitfilmsdb', {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(auth);
 
 app.use('/', require('./routes'));
 
