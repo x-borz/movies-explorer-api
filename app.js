@@ -3,13 +3,13 @@ const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { PORT } = require('./utils/constants');
+const { PORT, DB_CONNECTION_STRING } = require('./utils/constants');
 const errorHandler = require('./middlewares/error-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/bitfilmsdb', {
+mongoose.connect(DB_CONNECTION_STRING, {
   useNewUrlParser: true,
 });
 
