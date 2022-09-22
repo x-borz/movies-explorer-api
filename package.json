@@ -4,6 +4,7 @@
   "description": "diploma project backend",
   "main": "app.js",
   "scripts": {
+    "lint": "npx eslint .",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -16,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/x-borz/movies-explorer-api/issues"
   },
-  "homepage": "https://github.com/x-borz/movies-explorer-api#readme"
+  "homepage": "https://github.com/x-borz/movies-explorer-api#readme",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1"
+  }
 }
