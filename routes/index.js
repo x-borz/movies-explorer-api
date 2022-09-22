@@ -2,9 +2,10 @@ const router = require('express').Router();
 const { sendNotFoundResponse } = require('../controllers/404');
 const { createUser, login } = require('../controllers/users');
 const auth = require('../middlewares/auth');
+const { validSignin, validSignup } = require('../validators/user');
 
-router.post('/signin', login);
-router.post('/signup', createUser);
+router.post('/signin', validSignin, login);
+router.post('/signup', validSignup, createUser);
 
 router.use(auth);
 

@@ -14,6 +14,7 @@ const movieSchema = new mongoose.Schema(
     duration: {
       type: Number,
       required: 'не заполнено обязательное поле {PATH}',
+      validate: [(val) => val > 0, 'в поле {PATH} должно быть указано положительно значение'],
     },
     year: {
       type: String,

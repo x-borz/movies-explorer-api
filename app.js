@@ -1,3 +1,4 @@
+const { errors } = require('celebrate');
 const express = require('express');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
@@ -19,8 +20,8 @@ app.use(requestLogger);
 
 app.use('/', require('./routes'));
 
+app.use(errors());
 app.use(errorLogger);
-
 app.use(errorHandler);
 
 app.listen(PORT);
