@@ -6,6 +6,6 @@ const app = express();
 
 mongoose.connect('mongodb://localhost:27017/bitfilmsdb');
 
-// todo: добавить роуты
+app.use('/', require('./routes'));
 
 app.listen(PORT);
