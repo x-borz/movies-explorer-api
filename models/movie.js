@@ -45,7 +45,6 @@ const movieSchema = new mongoose.Schema(
     },
     movieId: {
       type: Number,
-      unique: true,
       required: 'не заполнено обязательное поле {PATH}',
     },
     nameRU: {
@@ -61,5 +60,8 @@ const movieSchema = new mongoose.Schema(
     versionKey: false,
   },
 );
+
+// задаем уникальный индекс на два поля - идентификатор фильма + пользователь
+movieSchema.index({ movieId: 1, owner: 1 }, { unique: true });
 
 module.exports = mongoose.model('movie', movieSchema);
