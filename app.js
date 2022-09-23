@@ -14,16 +14,16 @@ mongoose.connect(DB_CONNECTION_STRING, {
   useNewUrlParser: true,
 });
 
+app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(requestLogger);
 
 app.use('/', require('./routes'));
 
-app.use(errors());
 app.use(errorLogger);
+app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT);
