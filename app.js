@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: '*',
+  origin: '*', // ['https://xborz.diploma.nomoredomains.icu', 'http://xborz.diploma.nomoredomains.icu']
   methods: 'GET,POST,DELETE,OPTIONS,PATCH',
 }));
 
